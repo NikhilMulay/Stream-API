@@ -1,0 +1,44 @@
+import java.util.Arrays;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        int Arr1[] = {10,20,30,40,50};
+        
+        IntStream str1 = Arrays.stream(Arr1);
+        str1.forEach(System.out::println);
+        System.out.println();
+        
+        double Arr2[] = {12.90,67.45,78.56};
+        
+        DoubleStream str2 = Arrays.stream(Arr2);
+        str2.forEach(System.out::println);
+        System.out.println();
+
+        long Arr3[] = {12L,47L,783L};
+        
+        LongStream str3 = Arrays.stream(Arr3);
+        str3.forEach(System.out::println);
+        System.out.println();
+
+        String  Arr4[] = {"Aryan","Pinki","Nagesh"};
+        
+        Stream<String> str4 = Arrays.stream(Arr4);
+        str4.forEach(System.out::println);
+        
+        
+        
+    }
+}
+
+
+
+
+
+
+/*
+  Conversion : array to stream
+  1)public static IntStream stream(int Arr[])
+  1)public static LongStream stream(long Arr[])
+  3)public static DoubleStream stream(double Arr[])
+  4)public static Stream stream(T Arr[])
+*/
