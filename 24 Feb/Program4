@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.stream.*;
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Stream<Double> stream = Stream.generate(()->Math.random());
+        stream.limit(5).forEach(System.out::println);     
+        
+        System.out.println();
+        
+        Stream<Integer> iterate = Stream.iterate(15,n->n+1);
+        iterate.limit(10).forEach(System.out::println);     
+        
+    }
+}
+
+
+
+/*
+
+  Method to create infite Stream
+  1) Stream.generate(Supplier<T> s1)
+  2) Stream.iterate(final T seed,final UnaryOpertor<T> uo)
+
+*/
