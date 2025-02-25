@@ -6,8 +6,8 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         Integer numbers[] = {-10,-5,0,5,10,15,-20};
-      //   ;
-        List<Integer> list  = Arrays.asList(numbers).stream().filter(num->num>0).toList();
+      
+        List<Integer> list  = Arrays.stream(numbers).filter(num->num>=0).toList();
         
         System.out.println(list.toString());
         
@@ -19,4 +19,4 @@ class Main {
 
 
 
-// WAP to remove Negative Numbers from an Integer Array.
+// Program to remove Negative Numbers from an Integer Array.
