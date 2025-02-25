@@ -6,7 +6,7 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         Integer[] numbers = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-        List<Integer> list = Arrays.asList(numbers).stream().filter(num->{
+        List<Integer> list = Arrays.stream(numbers).filter(num->{
             for(int i=2;i<=num/2;i++){if(num%i==0) return false;} return true;}).toList();
         System.out.println(list.toString());
     }
