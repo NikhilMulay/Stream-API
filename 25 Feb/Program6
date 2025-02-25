@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.stream.Stream;
+import java.util.*;
+
+
+class Main {
+    public static void main(String[] args) {
+        String[] words = {"madam", "hello", "racecar", "java", "level", "world"};
+        List<String> list = Arrays.asList(words).stream().filter(str->{
+            int i = 0;
+            while(i<str.length()/2){
+                if(str.charAt(i)!=str.charAt(str.length()-i-1)){
+                    return false;
+                } 
+                i++;
+            }
+            return true;
+        }).toList();
+        System.out.println(list.toString());
+    }
+}
+
+
+// Program to filter Palindrome Words from an Array.
