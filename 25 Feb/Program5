@@ -6,7 +6,7 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         Integer[] numbers = {1, 2, 3, 4, 5, 2, 3, 6, 7, 8, 4};
-        List<Integer> list = Arrays.asList(numbers).stream().distinct().toList();
+        List<Integer> list = Arrays.stream(numbers).distinct().toList();
         System.out.println(list.toString());
     }
 }
