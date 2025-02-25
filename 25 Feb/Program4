@@ -6,7 +6,7 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         String[] words = {"Raj", "Rohit", "Smirti", "Richa", "Sky"};
-        List<String> list = Arrays.asList(words).stream().filter(str->str.length()>3).toList();
+        List<String> list = Arrays.stream(words).filter(str->str.length()>3).toList();
         System.out.println(list.toString());
     }
 }
