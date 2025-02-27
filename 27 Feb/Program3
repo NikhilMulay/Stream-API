@@ -1,0 +1,27 @@
+import java.util.stream.*;
+import java.util.*;
+
+
+public class Main {
+	public static void main(String[] args) {
+	    List<String> list = Arrays.asList("Amritasr", "Amravati", "Europe", "Itly", "Indonesia", "India");
+list.stream()
+    .sorted((str1, str2) -> {
+        int lengthCompare = Integer.compare(str2.length(), str1.length());
+        if (lengthCompare != 0) {
+            return lengthCompare;
+        }
+        return str1.compareTo(str2);
+    })
+    .forEach(System.out::println);
+	}
+
+}
+
+
+
+
+/*
+    list of strings, sort them by length first and lexicographically second.
+    Implement this using sorted.
+*/
