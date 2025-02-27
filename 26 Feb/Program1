@@ -8,5 +8,7 @@ class Main {
     }
 }
 
-// Program that creates a stream of integers using Stream.of, filters out the even numbers 
+/*
+   Program that creates a stream of integers using Stream.of, filters out the even numbers 
    and then prints each squared number using forEach.
+*/
