@@ -1,0 +1,27 @@
+import java.util.stream.*;
+import java.util.*;
+
+
+public class Main {
+	public static void main(String[] args) {
+	    Random rr = new Random(); 
+	    Stream.iterate(1, num -> num + 2).limit(10).map(num->num*num).forEach(System.out::println);
+	    
+	    System.out.println("---------------------------");
+	    
+	    Stream.generate(() -> {
+            int num;
+            do {
+                num = rr.nextInt(100); 
+            } while (num % 2 == 0); 
+            return num;
+        })
+        .limit(10).map(num -> num * num).forEach(System.out::println);
+	}
+
+}
+
+/*
+     Use Stream.iterate or Stream.generate to create an infinite stream. 
+     Then filter and map the data to produce the first 10 odd squares
+*/
