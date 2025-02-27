@@ -1,0 +1,20 @@
+import java.util.stream.*;
+import java.util.Arrays;
+
+
+class Main {
+    public static void main(String[] args) {
+       int Arr[] = { -3, 2, -5, 6, -1, 4};
+        int sum  = Arrays.stream(Arr).filter(num->num>0).map(num1->num1*num1).reduce(0,(a,b)->a+b);
+        System.out.println(sum);
+		
+    }
+}
+
+/*
+
+   Program that reads an array of integers, filters out the negative numbers, and then 
+   calculates the sum of the squares of the remaining positive numbers using streams and  
+   the reduce method.
+
+*/
