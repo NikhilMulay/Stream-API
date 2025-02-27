@@ -1,0 +1,23 @@
+import java.util.Arrays;
+import java.util.stream.*;
+
+record Student(String stuName,String courseName){ }
+
+class Main {
+    public static void main(String[] args) {
+      
+     Student Arr[] = {new Student("Alice", "Java"),
+   new Student("Bob", "Python"),new Student("Charlie", "Java"),new Student("David", "C++"),new Student("Eve", "JavaScript")};
+   Arrays.asList(Arr).stream().filter(stu->stu.courseName().equals("Java")).map(stu->stu.stuName()+"  "+stu.courseName()).forEach(System.out::println);
+    }
+}
+
+/*  
+    Create student record with the following fields:
+         name : (String)
+         course : (String)
+
+    ELC class .
+          list of Student objects, where each student is enrolled in different courses, write a Java program to filter out the students 
+          who are enrolled in the "Java" course and print their names using the forEach method and the stream API.
+*/
