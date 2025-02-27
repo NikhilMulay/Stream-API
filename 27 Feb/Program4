@@ -1,0 +1,20 @@
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Employee> employees = Arrays.asList(new Employee("John", 30), new Employee("Jane", 25), new Employee("Jack", 35));
+        List<String> names = employees.stream()
+                                      .map(employee -> employee.empName())
+                                      .collect(Collectors.toList());
+        names.forEach(System.out::println);
+    }
+}
+
+record Employee(String empName, Integer empId) { }
+
+
+/*
+   Implement a method using streams to convert a list of objects (e.g., Employee) 
+   into another list containing only one property of the object 
+*/
