@@ -1,0 +1,21 @@
+import java.util.Arrays;
+import java.util.stream.*;
+
+
+
+class Main {
+    public static void main(String[] args) {
+           Stream.of("Toby", "Anna", "Leroy", "Alex").filter(str->str.length()==4).sorted().limit(2).forEach(System.out::println);
+    }
+}
+
+
+/* 
+   Java program that processes a list of names to filter, sort, and print names with a length of 
+   exactly 4 characters.
+   Requirements:
+   Filter out names that are  exactly 4 characters long.
+   Sort the filtered names in lexicographical order (alphabetical order).
+   Limit the output to the first 2 names after sorting.
+   Print each name on a new line.
+*/
