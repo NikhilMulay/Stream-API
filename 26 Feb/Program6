@@ -1,0 +1,21 @@
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+      String str1 = Stream.of("Hello", "", "World", " ", "from", " ", "Java", "!")
+        .filter(str -> !str.equals(null))
+        .collect(Collectors.joining(""));
+		
+		System.out.println(str1);
+		
+    }
+}
+
+
+
+
+/*
+   Program that uses the Stream.of method to create a stream of strings, filters out 
+   the empty strings, and then concatenate the remaining strings into a single string
+
+*/
