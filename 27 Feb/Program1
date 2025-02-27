@@ -1,0 +1,19 @@
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+	public static void main(String[] args) {
+		List<String> list = Arrays.asList("Amritasr","Amravati","Europe","Itly","Indonesia","Europe","India");
+		list.stream().filter(str-> str.length()>5 &&(str.startsWith("A")||str.startsWith("E")||str.startsWith("I")||str.startsWith("O")||str.startsWith("U"))).forEach(System.out::println);
+	}
+
+}
+
+
+
+
+
+/*
+    Program to process a list of strings. Use a custom predicate to filter strings 
+    that start with a vowel and have a length greater than 5.
+*/
