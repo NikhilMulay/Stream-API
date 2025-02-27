@@ -1,0 +1,14 @@
+import java.util.stream.*;
+
+record Employee(String empName,Integer empId,Double empSalary){ }
+
+class Main {
+    public static void main(String[] args) {
+        Stream.of(new Employee("Scott",101,45000.00),new Employee("Mark",102,13000.00),new Employee("Jane",105,60000.00),new Employee("Sam",104,90000.00)).filter(emp->emp.empSalary()>30000.00).map(emp->emp.empName()).forEach(System.out::println);
+    }
+}
+
+/*
+         list of Employee objects with name and salary properties, program to filter the list of Employees by salary in 
+         who are having salary > 30000 and print the employee names
+*/
