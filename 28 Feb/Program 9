@@ -1,0 +1,15 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+      
+        Arrays.asList(12,23,34,12,34,5,676,23).stream().sorted().forEach(System.out::println);
+    }
+}
+
+
+
+// 9.Sort a list of integers in ascending order.
+
