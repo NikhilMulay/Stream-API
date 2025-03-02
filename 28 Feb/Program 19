@@ -1,0 +1,22 @@
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class FlattenList {
+    public static void main(String[] args) {
+        List<List<Integer>> listOfLists = List.of(
+                List.of(1, 2, 3),
+                List.of(4, 5, 6),
+                List.of(7, 8, 45)
+        );
+
+       
+       listOfLists.stream()
+                .flatMap(list -> list.stream()).filter(num->num>10).forEach(System.out::println);
+        
+    }
+}
+
+
+
+//  19.Filter out numbers greater than 10 and map the remaining numbers to their squares.
