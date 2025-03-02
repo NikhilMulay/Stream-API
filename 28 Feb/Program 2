@@ -1,0 +1,13 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        Arrays.asList("scott","Mark","jane","sam","Alex").stream().filter(str->str.startsWith("A")).forEach(System.out::println);
+}
+}
+
+
+// Filter all strings from a list that start with the letter "A".
