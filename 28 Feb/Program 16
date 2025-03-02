@@ -1,0 +1,19 @@
+import java.util.*;
+import java.util.stream.*;
+import java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] Arr = { 12, 23, 34 };
+
+        OptionalDouble average = Arrays.stream(Arr).average();
+
+        
+        if (average.isPresent())System.out.println(average.getAsDouble());
+       
+    }
+}
+
+
+
+  // 16. Convert a list of integers to a DoubleStream and find the average
