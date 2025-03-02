@@ -8,7 +8,7 @@ class Main {
         List<String> list1 = Arrays.asList("Scott","Mark","Sam");
         List<String> list2 = Arrays.asList("Jane","Samuel","Martin");
         Arrays.asList(list1,list2).stream().flatMap(list->list.stream()).toList().forEach(System.out::println);
-}
+     }
 }
 
 
