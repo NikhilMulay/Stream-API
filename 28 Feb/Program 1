@@ -1,0 +1,14 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        Arrays.asList(122,11,345,111,78).stream().filter(num->num%2==0).forEach(System.out::println);
+     }
+}
+
+
+
+// 1.Filter all even numbers from a list of integers.
