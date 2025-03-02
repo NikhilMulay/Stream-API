@@ -1,0 +1,17 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        List<String> list1 = Arrays.asList("Scott","Mark","Sam");
+        List<String> list2 = Arrays.asList("Jane","Samuel","Martin");
+        Arrays.asList(list1,list2).stream().flatMap(list->list.stream()).toList().forEach(System.out::println);
+}
+}
+
+
+
+// 6. Flatten a list of lists of String into a single list of String.
+
