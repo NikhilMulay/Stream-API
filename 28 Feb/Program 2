@@ -6,7 +6,7 @@ class Main {
     public static void main(String[] args) {
         
         Arrays.asList("scott","Mark","jane","sam","Alex").stream().filter(str->str.startsWith("A")).forEach(System.out::println);
-}
+    }
 }
 
 
