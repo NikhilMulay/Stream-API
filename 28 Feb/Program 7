@@ -1,0 +1,14 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        Arrays.asList(12,23,34,12,34,5,676,23).stream().distinct().forEach(System.out::println);
+    }
+}
+
+
+// 7. Remove duplicates from a list of integers.
+
