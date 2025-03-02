@@ -6,7 +6,7 @@ class Main {
     public static void main(String[] args) {
         
         Arrays.asList(12,23,34,45,56,67,89).stream().map(num->num*num).forEach(System.out::println);
-}
+   }
 }
 
 
