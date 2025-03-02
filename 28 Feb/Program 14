@@ -1,0 +1,17 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+      
+        Arrays.asList(new People("Scott",23),new People("Mark",49),new People("Martin",18),new People("Jane",34)).stream().sorted((p1,p2)->p1.age()-p2.age()).forEach(System.out::println);
+   
+   }
+}
+
+record People(String name,Integer age){ }
+
+
+// 14.Sort a list of objects based on their attributes (e.g., sort people by age).
+
