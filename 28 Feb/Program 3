@@ -1,0 +1,29 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        Arrays.asList(12,23,34,45,56,67,89).stream().map(num->num*num).forEach(System.out::println);
+}
+}
+
+
+
+
+// 3.Map a list of integers to their square values
+
+
+
+
+
+
+
+
+
+
+
+
+
+
