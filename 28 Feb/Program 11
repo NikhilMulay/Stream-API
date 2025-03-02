@@ -1,0 +1,16 @@
+import java.util.*;
+import java.util.stream.*;
+import  java.util.Arrays.*;
+
+class Main {
+    public static void main(String[] args) {
+        
+        Arrays.asList(45,56,67,89).stream().limit(3).forEach(System.out::println);
+    }
+}
+
+
+
+
+// 11 Limit a list of integers to the first 3 elements.
+
