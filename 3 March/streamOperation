@@ -1,0 +1,99 @@
+package smallprojects;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.stream.Collectors;
+
+record Employee(String name,int age,double salary,String gender){
+	
+}
+class EmployeeAdder {
+
+	public static List<Employee> addDetails() 
+	{
+		List<Employee> list = new ArrayList<>();
+		
+		list.add(new Employee("Jane", 27, 50000.0, "Male"));
+		list.add(new Employee("Anna", 27, 51000.0, "Female"));
+		list.add(new Employee("Bob", 27, 52000.0, "Male"));
+		list.add(new Employee("Anna de Armas", 28, 53000.0, "Female")); 
+	    list.add(new Employee("Scott", 29, 53000.0, "Male"));
+		list.add(new Employee("Scarlet", 30, 55000.0, "Female"));
+		list.add(new Employee("Sam", 31, 56000.0, "Male"));
+		list.add(new Employee("Emily ", 32, 57000.0, "Female"));
+		list.add(new Employee("Mark", 35, 58000.0, "Male"));
+		list.add(new Employee("Sophia", 35, 59000.0, "Female"));
+		
+		return list;
+
+	}
+
+}
+public class EmployeeT {
+	private static final String RED = "\033[1;31m"; // RED
+	private static final String RESET = "\033[0m"; 
+	
+	
+	public static void main(String[] args) {
+		List<Employee> list = EmployeeAdder.addDetails();
+		
+		
+		// 1. Filter Employees by Gender --> Retrieve a list of all female employees.
+		list.stream().filter(emp->emp.gender().equalsIgnoreCase("female")).forEach(System.out::println);
+		
+		System.out.println("--------------------------------------------------------------------");
+		
+		// 2. Filter Employees by Age --> Get a list of employees older than 30 years.
+		list.stream().filter(emp->emp.age()>30).forEach(System.out::println);
+		
+        System.out.println("--------------------------------------------------------------------");
+		
+		// 3. Filter Employees by Salary --> Find employees with a salary greater than $50,000.
+		list.stream().filter(emp->emp.salary()>50000).forEach(System.out::println);
+		
+        System.out.println("--------------------------------------------------------------------");
+		
+		// 4. Map Employee Names --> Create a list of employee names (Strings)
+		list.stream().map(emp->emp.name()).forEach(System.out::println);
+		
+        System.out.println("--------------------------------------------------------------------");
+		
+		// 5. Calculate Average Salary -->Calculate the average salary of all employees.
+		OptionalDouble average = list.stream().mapToDouble(emp->emp.salary()).average();
+		average.ifPresent(avg->System.out.println(avg));
+		
+		System.out.println("--------------------------------------------------------------------");
+		
+		// 6. Find Maximum Salary --> Find the employee with the highest salary.
+	  OptionalDouble maxSalary =  list.stream().mapToDouble(emp->emp.salary()).max();
+	  maxSalary.ifPresent(max->System.out.println(max));
+	    
+	  System.out.println("--------------------------------------------------------------------");
+	
+		// 7.Group Employees by Gender and return --> Group employees by gender and return
+		Map<String,List<Employee>> gender =  list.stream().collect(Collectors.groupingBy(emp->emp.gender()));
+		gender.forEach((k,v)->System.out.println(k+"  "+v));
+		
+		System.out.println("--------------------------------------------------------------------");
+		
+		// 8.Count Male Employees --> Count the number of male employees.
+		Long maleEmpCount = list.stream().filter(emp->emp.gender().equalsIgnoreCase("Male")).count();
+		System.out.println(maleEmpCount);
+		
+		
+    System.out.println("--------------------------------------------------------------------");
+		
+		// 9.Sum of All Salaries ---> Calculate the total sum of salaries for all employees.
+		double sumSalary = list.stream().mapToDouble(emp->emp.salary()).sum();
+		System.out.println(sumSalary);
+		
+		// 10. Sort Employees by Name -->  Sort the employees by their names in alphabetical order.
+	  list.stream().sorted((emp1,emp2)->emp1.name().compareTo(emp2.name())).forEach(System.out::println);
+	
+	
+	}
+
+}
